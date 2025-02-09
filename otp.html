@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container" style="height: 300px; width: 600px;">
+        <div class="form" >
+            <center>
+                <h2 style=" z-index: 1;font-size: 40px;">Enter OTP</h2>
+                <input type="password" style=" z-index: 1;font-size: 30px; border: none; border-bottom: 1px solid black;" id="otp" placeholder="Enter OTP"> <br><br> <br>
+                <button id="verifyOTP" style=" z-index: 1;font-size: 20px; width: 300px;"><a  style="text-decoration: none; color: white;" href="C:\Users\User\Desktop\Application Design\empass\index.html">Verify</a></button>
+                <p id="verificationResult"></p>
+            </center>
+        </div>
+    </div>
+    <script>
+        const verifyOTPButton = document.getElementById('verifyOTP');
+        const otpInput = document.getElementById('otp');
+        const verificationResult = document.getElementById('verificationResult');
+
+        verifyOTPButton.addEventListener('click', () => {
+            const enteredOTP = otpInput.value;
+            const storedNumber = localStorage.getItem('mobileNumber');
+
+            // Simulate OTP verification (Replace with real verification)
+            const isValidOTP = enteredOTP === '123456'; // Replace with actual OTP logic
+
+            if (isValidOTP) {
+                verificationResult.textContent = "OTP verified successfully!";
+                verificationResult.style.color = "green";
+                
+                // Redirect or perform actions after successful verification
+            } else {
+                verificationResult.textContent = "Incorrect OTP. Please try again.";
+                verificationResult.style.color = "red";
+            }
+        });
+    
+    </script>
+</body>
+</html>
